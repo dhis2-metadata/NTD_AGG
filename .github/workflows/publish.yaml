@@ -1,0 +1,17 @@
+name: Publish to S3
+
+on:
+  push:
+    tags:
+      - '**'
+
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: dhis2-metadata/gha-workflows/.github/workflows/publish.yaml@v1
+    secrets:
+      BOT_ACCESS_KEY: ${{ secrets.BOT_ACCESS_KEY }}
+      BOT_SECRET_KEY: ${{ secrets.BOT_SECRET_KEY }}
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
