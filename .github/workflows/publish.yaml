@@ -15,3 +15,5 @@ jobs:
       BOT_SECRET_KEY: ${{ secrets.BOT_SECRET_KEY }}
       S3_BUCKET: ${{ secrets.S3_BUCKET }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
+      BOT_GITHUB_PAT: ${{ secrets.BOT_GITHUB_PAT }}
+      BOT_GITHUB_EMAIL: ${{ secrets.BOT_GITHUB_EMAIL }}
