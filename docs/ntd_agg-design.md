@@ -2,11 +2,11 @@
 
 ## Background and Purpose
 
-The **NTD - Neglected Tropical DIseases Overarching Module** provides an overview of the design principles and guidelines used to develop a comprehensive digital data package for routine reporting on neglected tropical diseases (NTDs) within countries' health management information systems (HMIS). This document is intended for use by DHIS2 implementers at the country and regional levels to facilitate the implementation and localization of the module. The NTD metadata package can be adapted to align with local needs and national guidelines, ensuring that specific local workflows and regulations are considered in the adoption and adaptation of the programs included in this package.
+The **NTD - Neglected Tropical Diseases overarching module** provides an overview of the design principles and guidelines used to develop a comprehensive digital data package for routine reporting on neglected tropical diseases (NTDs) within countries' health management information systems (HMIS). This document is intended for use by DHIS2 implementers at the country and regional levels to facilitate the implementation and localization of the module. The NTD metadata package can be adapted to align with local needs and national guidelines, ensuring that specific local workflows and regulations are considered in the adoption and adaptation of the programs included in this package.
 
 The datasets incorporated in this module are based on WHO recommendations and best practices or established reporting frameworks for NTD surveillance and control [WHO, 2023](https://www.who.int/publications/i/item/9789240062863). These datasets will often need to be adjusted to fit national reporting systems. This adjustment might involve adding important local variables or omitting information that is not captured at the clinical level.
 
-The NTD Neglected Tropical DIseases Overarching Module supports global and national efforts in monitoring, controlling, and ultimately eliminating NTDs. By utilising standardised data collection and reporting frameworks, countries can better track their progress against the targets in the WHO's 2021-2030 road map for NTDs. This strategic document aims to reduce the number of people requiring interventions for NTDs by 90% and achieve significant reductions in disease-related morbidity and mortality by 2030​ World Health Organization [WHO, 2021](https://www.who.int/publications/i/item/9789240010352)
+The NTD Neglected Tropical Diseases overarching module supports global and national efforts in monitoring, controlling, and ultimately eliminating NTDs. By utilising standardised data collection and reporting frameworks, countries can better track their progress against the targets in the WHO's 2021-2030 road map for NTDs. This strategic document aims to reduce the number of people requiring interventions for NTDs by 90% and achieve significant reductions in disease-related morbidity and mortality by 2030​ World Health Organization [WHO, 2021](https://www.who.int/publications/i/item/9789240010352)
 
 ## System Design Overview
 
@@ -28,7 +28,7 @@ The NTD toolkit includes different data sets that can be used at any given time 
 
 ### Data Set - NTD - Neglected Tropical Diseases
 
-The NTD overarching dataset is structured in **29 sections**, one per disease. All sections have a **flat structure**  and are disaggregated by **sex (male and female) and by Global NTD Annual Reporting Form (GNARF) age groups (less than 1y, 1 -4y, 5-14y, 15-24y, 25-49y, 50-64y, 65+ years)**.
+The NTD overarching module is structured in **29 sections**, one per disease. All sections have a **flat structure**  and are disaggregated by **sex (male and female) and by Global NTD Annual Reporting Form (GNARF) age groups (less than 1y, 1 -4y, 5-14y, 15-24y, 25-49y, 50-64y, 65+ years)**.
 
 The dataset is designed for the **reporting of diseases at the point of care (health facility level)**.
 
@@ -132,7 +132,7 @@ The tabs for the data fields are arranged in chronological order of the flow of 
 ### NTD Overarching Indicators
 
 The population data should be updated to reflect the local implementation, ensuring accuracy and alignment with specific regional requirements.
-While not included in the current toolkit, it is recommended to develop indicators to track and compare year-over-year changes for the diseases under analysis. This approach was implemented in the [district dashboard for malaria](https://docs.dhis2.org/en/implement/health/malaria/malaria-hmis/design).html#malaria-district-dashboard), allowing for trend analysis over time. If needed, the following formula can be used to create this indicator accurately:
+While not included in the current toolkit, it is recommended to develop indicators to track and compare year-over-year changes for the diseases under analysis. This approach was implemented in the [district dashboard for malaria](#mal-agg-design), allowing for trend analysis over time. If needed, the following formula can be used to create this indicator accurately:
 
 Change(%) = (a-b)/a
 
@@ -229,9 +229,12 @@ By incorporating NTD-trained staff information, the integration prevents double 
 
 ### Data exchange
 
-#### NTD Overarching vs Disease-specific NTD Modules vs Tracker
+The principle of reusing data plays a key role in any successful implementation of digital tools. It is possible to link the NTD overarching module with existing disease-specific programs, should these be already implemented within the HMIS. DHIS2 supports internal and external aggregate Data Exchanges that can aggregate existing HMIS data and periodically push it to the corresponding variables in the overarching data set. For more information, please refer to [DHIS2 documentation](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/data-exchange.html?h=data+exchange). A reference data exchange has been configured to enable data flow between Human Rabies Surveillance module and the NTD overarching data set. Information regarding this data exchange can be found in the design guide of the [Human Rabies Surveillance module](#ntd_hrs-design)
 
-The NTD Overarching module provides a foundational set of variables that eachcountry should report. It covers the essential data points needed for tracking NTDs at a basic level and serves as the minimum requirement for standardized reporting. In contrast, the Disease-specific NTD modules focus on one disease at the time, presenting a more detailed and higher-volume dataset for reporting, suited to countries with specific disease surveillance needs. These modules are still aggregated but are designed with increased complexity to capture disease-specific data effectively.
+
+#### NTD overarching module vs Disease-specific NTD Modules vs Tracker
+
+The NTD overarching module provides a foundational set of variables that eachcountry should report. It covers the essential data points needed for tracking NTDs at a basic level and serves as the minimum requirement for standardized reporting. In contrast, the Disease-specific NTD modules focus on one disease at the time, presenting a more detailed and higher-volume dataset for reporting, suited to countries with specific disease surveillance needs. These modules are still aggregated but are designed with increased complexity to capture disease-specific data effectively.
 The disease-specific dataset also facilitate the data exchange with tracker data, ensuring that information entered into trackers, such as the sabies tracker, is aggregated and visualized accuretaly within the corresponding disease-specific dataset. Importantly, to streamline reporting and avoid redundancy, data entry should occur in either the tracker, the disease-specific module or the overarching module, not in multiple places. WHen data is intered into a tracker, it will automatically aggregate within ethe disease specific dataset as its core output for HMIS-integrated monitoring and nalaysis. The dataset has, in turn, been mapped to ensure alignment with the overarching outputs.
 
 ![The structure behind the data exchange within the NTD toolkits](resources/images/NTD_BURDEN_008.png)
