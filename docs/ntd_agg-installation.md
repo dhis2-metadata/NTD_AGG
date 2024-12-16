@@ -17,9 +17,9 @@ The metadata package consists of the following modules:
 
 Installation of the module consists of several steps:
 
-1. [Preparing the metadata file with DHIS2 metadata](#preparing-the-metadata-file).
-2. [Importing the metadata file into DHIS2](#importing-metadata).
-3. [Configuring the imported metadata](#configuration).
+1. [Preparing the metadata file with DHIS2 metadata](#preparing-the-metadata-file)
+2. [Importing the metadata file into DHIS2](#importing-metadata)
+3. [Configuring the imported metadata](#configuration)
 4. [Adapting the program after import](#adapting-the-program)
 
 It is recommended to first read through each section of the installation guide before starting the installation and
