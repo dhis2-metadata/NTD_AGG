@@ -6,7 +6,7 @@
 
 ## Design
 
-- [Version 1.0.0](ntd-agg-design)
+- [Version 1.0.0](#ntd-agg-design)
 
 ## Installation
 
